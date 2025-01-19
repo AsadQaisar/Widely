@@ -1,0 +1,33 @@
+﻿@model Widely.Models.tbl_User
+
+@{
+	ViewData["Title"] = "Deposit";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Settings</h1>
+
+<div>
+	<h4>Change Password</h4>
+	<hr />
+	@Html.ValidationSummary(true, "", new {@class = "text-danger" })
+	<div class="col-md-4">
+		<form asp-action="ChangePass">						
+			<div class="form-group">
+				<div class="form-group">
+                <label asp-for="LoginPassword" class="control-label"></label>
+                <input asp-for="LoginPassword" class="form-control" />
+                <span asp-validation-for="LoginPassword" class="text-danger"></span>
+            </div>
+			<div class="form-group">
+				<p>New Password</p>
+                <input type="password" id="password" name="password" class="form-control"/>
+				<span asp-validation-for="LoginPassword" class="text-danger"></span>
+			</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Save Changes" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
